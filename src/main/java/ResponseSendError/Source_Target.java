@@ -1,4 +1,4 @@
-package ServerSideRequest;
+package ResponseSendError;
 
 import org.apache.commons.httpclient.util.HttpURLConnection;
 
@@ -13,12 +13,12 @@ public class Source_Target {
     HttpServletResponse resp;
 
     protected void doGet() throws IOException {
-        URL url = new URL(req.getParameter("url"));
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+        String requestParameter1 =  req.getParameter("page");
+        String requestParameter2 = requestParameter1;
+        String requestParameter3 = requestParameter2;
+        resp.sendError(HttpServletResponse.SC_NOT_FOUND, requestParameter3);
 
 
     }
-
-
-
 }
