@@ -1,7 +1,7 @@
 package ResponseSendError;
 
 import org.apache.commons.httpclient.util.HttpURLConnection;
-
+import org.apache.commons.text.StringEscapeUtils;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -9,16 +9,21 @@ import java.net.URL;
 
 public class Source_Target {
 
-    HttpServletRequest req;
-    HttpServletResponse resp;
+    HttpServletRequest request;
+    HttpServletResponse response;
+
+
 
     protected void doGet() throws IOException {
-
-        String requestParameter1 =  req.getParameter("page");
-        String requestParameter2 = requestParameter1;
-        String requestParameter3 = requestParameter2;
-        resp.sendError(HttpServletResponse.SC_NOT_FOUND, requestParameter3);
-
-
+        response.sendError(HttpServletResponse.SC_NOT_FOUND,
+                "The page \"" + request.getParameter("page") + "\" was not found.");
     }
+
+    protected void doGet2() throws IOException {
+
+        response.sendError(HttpServletResponse.SC_NOT_FOUND,
+                "The page \"" + StringEscapeUtils.escapeEcmaScript(request.getParameter("page"))
+                        + "\" was not found.");
+    }
+
 }
