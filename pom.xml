@@ -49,6 +49,12 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <sonar.projectKey>Sebottenhof99_BACleanF</sonar.projectKey>
+        <sonar.organization>sebottenhof99</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>c43a74c22577ad69fbbca55b3585f7d2dda046ac</sonar.login>
     </properties>
+
+
 
 </project>
