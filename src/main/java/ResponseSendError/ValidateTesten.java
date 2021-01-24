@@ -26,10 +26,12 @@ public class ValidateTesten {
             response.sendError(HttpServletResponse.SC_NOT_FOUND, doNotfindIt3);
         }
 
+
         String doNotfindIt4 = request.getParameter("par");
         if(validate4(doNotfindIt4)){
             response.sendError(HttpServletResponse.SC_NOT_FOUND, doNotfindIt4);
         }
+        
 
     }
 
